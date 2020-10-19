@@ -1,6 +1,6 @@
 WITH norm AS (
   SELECT LOWER(word) AS word, year, term_frequency, document_frequency
-  FROM `allenday-2020-dev.words.eng_all_1gram` 
+  FROM `allenday-2020-dev.words.raw_eng_all_1gram` 
   WHERE word NOT LIKE '%\\_%'
 --   WHERE NOT REGEXP_CONTAINS(word, r'_(ADJ|ADP|ADV|AUX|CONJ|DET|INTJ|NOUN|NUM|PART|PRON|PROPN|PRT|PUNCT|SCONJ|SYM|VERB|X|\.)$')
 ),
@@ -34,4 +34,3 @@ SELECT
   years.year,
 FROM years, frequencies, ranks
 WHERE years.word = frequencies.word AND years.word = ranks.word
-ORDER BY document_rank
