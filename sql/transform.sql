@@ -28,7 +28,9 @@ ranks AS (
 )
 
 SELECT 
-  frequencies.*, 
+  frequencies.word AS ngram,
+  frequencies.term_frequency,
+  frequencies.document_frequency,
   ranks.term_rank,
   ranks.document_rank,
   years.year,
