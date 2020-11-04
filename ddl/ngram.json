@@ -25,7 +25,7 @@
     },
     {
         "description": "ascending rank of the ngram document frequency within the corpus. 1=most frequent",
-        "name": "doocument_rank",
+        "name": "document_rank",
         "type": "INTEGER",
         "mode": "REQUIRED"
     },
