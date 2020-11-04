@@ -1,0 +1,58 @@
+[
+    {
+        "description": "the ngram",
+        "name": "ngram",
+        "type": "STRING",
+        "mode": "REQUIRED"
+    },
+    {
+        "description": "number of occurrences of ngram within the corpus",
+        "name": "term_frequency",
+        "type": "INTEGER",
+        "mode": "REQUIRED"
+    },
+    {
+        "description": "number of corpus documents within which the ngram appeared",
+        "name": "document_frequency",
+        "type": "INTEGER",
+        "mode": "REQUIRED"
+    },
+    {
+        "description": "ascending rank of the ngram term frequency within the corpus. 1=most frequent",
+        "name": "term_rank",
+        "type": "INTEGER",
+        "mode": "REQUIRED"
+    },
+    {
+        "description": "ascending rank of the ngram document frequency within the corpus. 1=most frequent",
+        "name": "doocument_rank",
+        "type": "INTEGER",
+        "mode": "REQUIRED"
+    },
+    {
+        "description": "ngram data per-year",
+        "name": "year",
+        "type": "RECORD",
+        "mode": "REPEATED",
+        "fields": [
+            {
+                "description": "year",
+                "name": "year",
+                "type": "INTEGER",
+                "mode": "REQUIRED"
+            },
+            {
+                "description": "term frequency by year - these are aggregated to the outer term_frequency field",
+                "name": "term_frequency",
+                "type": "INTEGER",
+                "mode": "REQUIRED"
+            },
+            {
+                "description": "document frequency by year - these are aggregated to the outer document_frequency field",
+                "name": "document_frequency",
+                "type": "INTEGER",
+                "mode": "REQUIRED"
+            }
+        ]
+    }
+]
